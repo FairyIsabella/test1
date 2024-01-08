@@ -1,0 +1,17 @@
+-   name: 查询
+    base_url: https://test-t.xmhaini.com/dev-api
+    request:
+      method: POST
+      url: /product/attr/list
+      params:
+        grant_type:
+        appid:
+        secret:
+    # json表达式提取，正则表达式提取
+    extract:
+      access_token: '"access_token":"(.+?)"'
+    validate:
+    -   eq:
+          - status_code
+          - 200
+

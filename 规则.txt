@@ -1,0 +1,15 @@
+自动化测试框架规格
+1. 必须有的四个一级关键字：name,base_url,request,valiate
+2. 在request一级关键字下必须包括两个二级关键字：method,url
+3. 传参方式：在request一级关键字下，通过二级关键字参数：
+    如果是get请求，通过params传参
+    如果是post请求：
+        传json格式，通过json关键字传参
+        传表单格式，通过data关键字传参
+        传文件格式，通过files关键字传参，如：
+            file:
+                media:"E:\XX\xx"
+3. 如果需要做接口关联的话，那么必须使用一级关键字：extract,
+    如：json提取方式
+    extract:
+        access_token:access_token
